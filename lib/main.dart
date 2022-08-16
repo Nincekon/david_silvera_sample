@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget titleSection = Container(
-    padding: const EdgeInsets.all(8),
+    padding: const EdgeInsets.all(16),
     child: Row(
       children: [
 
@@ -106,6 +106,38 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
   );
 
+  Widget buttonSection = Container(
+    padding: const EdgeInsets.all(8),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+
+        _buildButtonColumn(Icons.comment, Colors.blue, "COMMENT"),
+
+        _buildButtonColumn(Icons.share, Colors.blue, "ALARM"),
+      ],
+    ),
+  );
+
+  Widget contentSection = Container(
+    padding: const EdgeInsets.all(32),
+    child: Column(
+      children: [
+
+        Text(
+          "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+          softWrap: true,
+        ),
+
+        Text(
+          "2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+          softWrap: true,
+        ),
+      ],
+    ),
+
+  );
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -124,6 +156,10 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
 
           titleSection,
+
+          buttonSection,
+
+          contentSection,
 
           Center(
             // Center is a layout widget. It takes a single child and positions it
@@ -164,4 +200,26 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+Column _buildButtonColumn(IconData icon, Color color, String label){
+ return Column(
+   mainAxisAlignment: MainAxisAlignment.center,
+   children: [
+
+     Container(
+       padding: const EdgeInsets.only(bottom: 8),
+       child: Icon(icon, color: color, size: 24,),
+     ),
+
+     Text(
+       label,
+       style: TextStyle(
+           color: color,
+         fontSize: 14,
+         fontWeight: FontWeight.w400,
+       ),
+     ),
+   ],
+ );
 }
