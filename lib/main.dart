@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:transparent_image/transparent_image.dart';
+// import 'package:cached_network_image/cached_network_image.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'David sample',
       theme: ThemeData(
         // This is the theme of your application.
@@ -74,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
-                  "Pizza facile",
+                  "Graines de palme",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -154,6 +157,62 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: [
+
+          // To load an image from a remote server
+          // Image.network(
+            // 'https://example.com/image.png',
+            // width: 600,
+            // height: 240,
+            // fit: BoxFit.cover,
+          // ),
+
+          // To load an image with cached copy from a remote server
+          // CachedNetworkImage(
+            // placeholder: (content, url) => Center(child: CircularProgressIndicator()),
+            // errorWidget: (context, url, error) => Icon(Icons.error),
+            // image: 'https://example.com/image.png',
+            // width: 600,
+            // height: 240,
+            // fit: BoxFit.cover,
+          // ),
+
+          // To load an image with an animation from a remote server
+          // FadeInImage.memoryNetwork(
+            // placeholder: kTransparentImage,
+            // image: 'https://example.com/image.png',
+            // width: 600,
+            // height: 240,
+            // fit: BoxFit.cover,
+          // ),
+
+          // To load an image with a loader from a remote server
+            // Stack(
+              // children: [
+                // Container(
+                  // width: 600,
+                  // height: 240,
+                  // child: Center(child: CircularProgressIndicator()),
+
+                // ),
+
+                // FadeInImage.memoryNetwork(
+                  // placeholder: kTransparentImage,
+                  // image: 'https://example.com/image.png',
+                  // width: 600,
+                  // height: 240,
+                  // fit: BoxFit.cover,
+                // ),
+              // ]
+            // ),
+
+
+          Image.asset(
+              "images/graines_palme.jpg",
+            width: 600,
+            height: 240,
+            fit: BoxFit.cover,
+          ),
+
 
           titleSection,
 
